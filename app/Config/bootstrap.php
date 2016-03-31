@@ -50,6 +50,12 @@ Cache::config('default', array('engine' => 'File'));
  * ));
  */
 
+App::build(array(
+    'Vendor' => array(ROOT . DS . APP_DIR . DS . 'Vendor' . DS),
+    'Plugin' => array(ROOT . DS . 'cake' . DS . 'Plugin' . DS)
+));
+
+
 /**
  * Custom Inflector rules can be set to correctly pluralize or singularize table, model, controller names or whatever other
  * string is passed to the inflection functions
@@ -66,6 +72,7 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::loadAll(); // Loads all plugins at once
  * CakePlugin::load('DebugKit'); // Loads a single plugin named DebugKit
  */
+ CakePlugin::loadAll(); // Loads all plugins at once
 
 /**
  * To prefer app translation over plugin translation, you can set
